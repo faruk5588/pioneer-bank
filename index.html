@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pioneer Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    
+    <div id="login-area">
+        <h1 class="text-center">Welcome to Pionner Bank</h1>
+        <div class="submit-area">
+            <h4 class="mb-3">Login</h4>
+            <input class="form-control" type="text" placeholder="Email">        </br>
+            <input class="form-control" type="password" placeholder="password">    </br>
+            <button id="login" class="btn btn-success">Enter</button>
+        </div>
+    </div>
+
+    <div id="transaction-area">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="deposit marge">
+                    <h5>Deposi</h5>
+                <h2>$0.00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw marge">
+                    <h5>Withdraw</h5>
+                <h2>$0.00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance marge">
+                    <h5>Balance</h5>
+                <h2>$1200</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            
+                <div class="col-md-6 mt-5">
+                    <div class="shadows">
+                        <h3 class="mb-3">Deposit</h3>
+                    <input class="form-control" type="text" placeholder="$ amount you want to deposit"></br>
+                    <button class="btn btn-success">Deposit</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-5">
+                    <div class="shadows">
+                        <h3 class="mb-3">Withdraw</h3>
+                    <input class="form-control" type="text" placeholder="$ amount you want to withdraw"></br>
+                    <button class="btn btn-success">Withdraw</button>
+                    </div>
+                </div>
+    
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<script>
+
+    const loginBtn = document.getElementById("login");
+
+    loginBtn.addEventListener("click", function(){
+        const loginArea = document.getElementById("login-area");loginArea.style.display = "none";
+
+        const transactionArea = document.getElementById("transaction-area");
+
+        transactionArea.style.display="block"
+
+    });
+
+</script>
+
+</body>
+</html>
