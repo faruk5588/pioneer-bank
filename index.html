@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pioneer Bank</title>
-    <lfink rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
@@ -24,20 +24,20 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="deposit marge">
-                    <h5>Deposi</h5>
-                <h2>$0.00</h2>
+                    <h5>Deposit</h5>
+                    <h2>$ <span id="currentDeposit">0.00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="withdraw marge">
                     <h5>Withdraw</h5>
-                <h2>$0.00</h2>
+                <h2>$ <span idc="currentDeposit">0.00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="balance marge">
                     <h5>Balance</h5>
-                <h2>$1200</h2>
+                    <h2>$ <span id="currentBalance">1200</span></h2>
                 </div>
             </div>
         </div>
@@ -47,8 +47,8 @@
                 <div class="col-md-6 mt-5">
                     <div class="shadows">
                         <h3 class="mb-3">Deposit</h3>
-                    <input class="form-control" type="text" placeholder="$ amount you want to deposit"></br>
-                    <button class="btn btn-success">Deposit</button>
+                    <input id="depositAmount" class="form-control" type="text" placeholder="$ amount you want to deposit"></br>
+                    <button id="addDeposit" class="btn btn-success">Deposit</button>
                     </div>
                 </div>
                 <div class="col-md-6 mt-5">
@@ -71,6 +71,8 @@
 
 <script>
 
+    //LOGIN BUTTON EVENT
+
     const loginBtn = document.getElementById("login");
 
     loginBtn.addEventListener("click", function(){
@@ -81,6 +83,37 @@
         transactionArea.style.display="block"
 
     });
+
+
+    //DEPOSIT BUTTON
+
+    const depositBtn = document.getElementById("addDeposit");
+    depositBtn.addEventListener("click", function(){
+
+        const depositAmount = document.getElementById("depositAmount").value;
+        const depositNumber = parseFloat(depositAmount);
+
+        const currentDeposit = document.getElementById("currentDeposit").innerText;
+        const currentDepositNumber = parseFloat(currentDeposit);
+        const totalDeposit = depositNumber + currentDepositNumber;
+        document.getElementById("currentDeposit").innerText = totalDeposit;
+
+
+        const currentBalance = document.getElementById("currentBalance").innerText;
+        const currentBalanceNumber = parseFloat(currentBalance);
+        const totalBalance = depositNumber + currentBalanceNumber;
+        document.getElementById("currentBalance").innerText = totalBalance;
+
+
+  
+
+
+        document.getElementById("depositAmount").value="";
+
+    })
+
+
+
 
 </script>
 
